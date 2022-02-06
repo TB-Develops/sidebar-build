@@ -2,6 +2,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  useNavigate
 } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
@@ -11,7 +12,7 @@ import Calender from '../src/Pages/Calender';
 import Documents from '../src/Pages/Documents';
 import Projects from '../src/Pages/Projects';
 import Sidebar from "./Sidebar";
-
+import { AnimatePresence } from "framer-motion";
 
 
 const Pages = styled.div`
@@ -31,19 +32,18 @@ const Pages = styled.div`
 
 
 function App() {
+ 
   return (
     <>
       <Sidebar />
       <Pages>
-        <BrowserRouter>
           <Routes>
-            <Route path = "/*" element = {<Home />}/> 
+            <Route path = "/" element = {<Home />}/> 
             <Route path = "/team" element = {<Team />}/>
             <Route path = "/calender" element = {<Calender />}/>
             <Route path = "/documents" element = {<Documents />}/>
             <Route path = "/projects" element = {<Projects />}/>
           </Routes>
-        </BrowserRouter>
       </Pages>
     </>
   );

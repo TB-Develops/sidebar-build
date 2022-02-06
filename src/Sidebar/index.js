@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { useState } from 'react';
+import { NavLink, useNavigate  } from 'react-router-dom';
 
 //SVG Files
 import logo from '../assets/logo.svg';
@@ -208,6 +209,7 @@ const Logout = styled.button`
 
 
 const Sidebar = () => {
+    const navigate = useNavigate();
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
@@ -219,27 +221,27 @@ const Sidebar = () => {
     <Container>
         <Button clicked={click} onClick={() => handleClick()}> </Button>
         <SidebarContainer>
-            <Logo>
+            <Logo >
                 <img src={logo} alt='logo' />
             </Logo>
             <SlickBar clicked={click}>
-                <Item>
+                <Item onClick={() => navigate(`/`)}>
                     <img src={Home} alt="Home" />
                     <Text clicked={click}> Home </Text>
                 </Item>
-                <Item>
+                <Item onClick={() => navigate(`/team`)}>
                     <img src={Team} alt="Team" />
                     <Text clicked={click}> Team </Text>
                 </Item>
-                <Item>
+                <Item onClick={() => navigate(`/calender`)}>
                     <img src={Calender} alt="Calender" />
                     <Text clicked={click}> Calender </Text>
                 </Item>
-                <Item>
+                <Item onClick={() => navigate(`/documents`)}>
                     <img src={Documents} alt="Documents" />
                     <Text clicked={click}> Documents </Text>
                 </Item>
-                <Item>
+                <Item onClick={() => navigate(`/projects`)}>
                     <img src={Projects} alt="Projects" />
                     <Text clicked={click}> Projects </Text>
                 </Item>
