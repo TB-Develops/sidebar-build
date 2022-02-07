@@ -18,7 +18,8 @@
 }
 
 body{
-  background-color: var(--background);
   font-family: 'Exo 2', sans-serif;
   font-size: 1.1rem;
+  background-color: #000000;
+  background-image: linear-gradient(-110deg, #000000 50%, #434343 100%);
 }

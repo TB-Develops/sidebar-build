@@ -65,6 +65,7 @@ const SidebarContainer = styled.div`
        margin-top:1rem;
        border-radius:0 30px 30px 0;
        padding: 1rem 0;
+       border-right:2px solid #009FFD;
 
        display:flex;
        flex-direction: column;
@@ -88,6 +89,7 @@ const SlickBar = styled.ul`
     flex-direction: column;
     align-items: center;
     background-color: var(--black);
+
 
     padding:2rem 0;
 
@@ -115,7 +117,9 @@ const Item = styled.li`
     img {
         width: 1.2rem;
         height: auto;
-        filter: invert(81%) sepia(4%) saturate(855%) hue-rotate(162deg) brightness(86%) contrast(95%);
+        // filter: invert(81%) sepia(4%) saturate(855%) hue-rotate(162deg) brightness(86%) contrast(95%);
+        //filter: invert(24%) sepia(73%) saturate(7332%) hue-rotate(355deg) brightness(90%) contrast(124%);
+        filter:invert(59%) sepia(84%) saturate(804%) hue-rotate(358deg) brightness(100%) contrast(106%);
     }
 `
 
@@ -241,9 +245,9 @@ const Sidebar = () => {
                     <img src={Documents} alt="Documents" />
                     <Text clicked={click}> Documents </Text>
                 </Item>
-                <Item onClick={() => navigate(`/projects`)}>
+                <Item onClick={() => navigate(`/tracker`)}>
                     <img src={Projects} alt="Projects" />
-                    <Text clicked={click}> Projects </Text>
+                    <Text clicked={click}> Tracker </Text>
                 </Item>
             </SlickBar>
 
